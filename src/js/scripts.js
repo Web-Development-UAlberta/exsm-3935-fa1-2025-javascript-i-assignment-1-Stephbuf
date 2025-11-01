@@ -1,14 +1,27 @@
-// eslint-disable-next-line no-unused-vars
-/* global output, input */
-// eslint-disable-next-line no-unused-vars
+
 async function main() {
-  // This is where the code you're actually experimenting with goes.
 
-  const prompt = "Please enter your name, or 'Exit' to quit: ";
-  let name = await input(prompt);
 
-  while (name !== "Exit") {
-    output("Hello, " + name + "!");
-    name = await input(prompt);
-  }
+  let firstName = await input("what is your first name?");
+firstName = String(firstName);
+
+let lastName = await input("what is your last name?");
+lastName = String(lastName);
+
+let fullName = firstName + " " + lastName;
+
+    output("Hello, " + fullName.replace(/o/g, "a") + "!");
+
+
+
+let largerNum = await input("Please enter a number larger than 10: ");
+  largerNum = Number(largerNum);
+
+  let smallerNum = await input("Please enter a number smaller than 10: ");
+  smallerNum = Number(smallerNum);
+
+  let remainder = largerNum % smallerNum;
+
+  output("The remainder of " + largerNum + " divided by " + smallerNum + " is " + remainder + ".");
 }
+  
